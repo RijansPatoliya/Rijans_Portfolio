@@ -18,7 +18,7 @@ function Projects() {
   const fetchProjects = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("http://localhost:3000/api/projects/allProjects");
+      const response = await axios.get("https://rijans-portfolio.onrender.com/api/projects/allProjects");
       
       // Filter projects based on active category
       const filteredProjects = response.data.filter(project => {

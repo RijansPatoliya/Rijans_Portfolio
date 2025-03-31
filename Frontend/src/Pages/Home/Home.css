@@ -1,0 +1,258 @@
+
+.banner-component {
+    display: flex;
+    min-height: 100vh;
+    padding: 0 10%;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  .banner-left-content {
+    max-width: 800px;
+  }
+  
+  h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #8b8b8b;
+    }
+  
+
+  .typewriter-container {
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .static-text {
+    font-size: 3rem;
+    color: #ccc;
+    margin-right: 10px; /* Space between "I'm a" and animated text */
+  }
+
+  
+  @keyframes type {
+    0% {
+      width: 0;
+      opacity: 1; /* Show when typing starts */
+    }
+    50% {
+      width: 13ch; /* Approx width for longest text, adjust if needed */
+      opacity: 1; /* Fully visible */
+    }
+    75% {
+      width: 13ch;
+      opacity: 1; /* Hold text */
+    }
+    100% {
+      width: 0;
+      opacity: 0; /* Erase and hide */
+    }
+  }
+  
+  .description {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #8b8b8b;
+    max-width: 90%;
+    margin-bottom: 2.5rem;
+  }
+
+/* Base marquee styles */
+.marquee {
+  width: 100vw; /* Full viewport width */
+  background-color: rgb(12, 12, 12);
+  color: #ffffff;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+/* Container for marquee content */
+.marquee-container {
+  margin-bottom: 27px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.marquee-container:last-child {
+  margin-bottom: 0;
+}
+
+/* Direction classes */
+.marquee-ltr,
+.marquee-rtl {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Content wrapper */
+.marquee-content {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Left to Right animation */
+.marquee-ltr .marquee-content {
+  animation-name: marquee-ltr;
+}
+
+/* Right to Left animation */
+.marquee-rtl .marquee-content {
+  animation-name: marquee-rtl;
+}
+
+/* Individual items */
+.marquee-item {
+  display: flex;
+  align-items: center;
+  padding: 0 38px;
+  flex-shrink: 0;
+  gap: 25px;
+}
+
+/* Logo (image) styling */
+.logo-img {
+  width: 4.7rem; /* Match your desired size */
+  height: 4.7rem; /* Match your desired size */
+  margin-bottom: 18px;
+  object-fit: contain; /* Ensures the image scales properly without distortion */
+}
+
+/* Text styling */
+.marquee-item span {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/* Updated keyframes for true infinite scroll */
+@keyframes marquee-ltr {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+/* Updated keyframes for RTL */
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.title {
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.gradient-text {
+  font-weight: bold;
+  background-image: linear-gradient(45deg, #ff00ff, #8000ff, #00ffff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  animation: gradientShift 4s infinite linear;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.dynamic-text {
+  font-size: 2.7rem;
+  color: #ccc;
+  margin-left: 10px; /* मार्जिन एडजस्ट करो */
+  text-shadow: 2px 2px 10px rgba(105, 90, 201, 0.5); /* लाइट ग्लो इफेक्ट */
+}
+
+
+
+/* Hover effect */
+.marquee-item:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.marquee-item:hover .logo-img {
+  filter: drop-shadow(0 0 8px rgb(66, 84, 156));
+}
+
+.touch-container{
+  display: flex;
+}
+
+
+.touch-heading h1{
+  color: white;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3em;
+  margin-left: 3em;
+  position: relative;
+  margin-top: 3em;
+}
+
+.social-links{
+  position: absolute;
+  margin-left: 55em;
+  margin-top: 4em;
+}
+
+.social-links h2{
+  margin-bottom: 1.2em;
+}
+
+.link{
+  display: flex;
+  gap: 4.4em;
+  align-items: center;
+  margin-bottom: 1.3em;
+}
+
+.link-title {
+  font-size: 1.2em;
+}
+
+
+.description {
+  position: relative;
+  padding-left: 14px; /* Adjust spacing */
+  color: #ccc; /* Text color */
+}
+
+.description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px; /* Adjust thickness */
+  background-color: #007bff; /* Base blue color */
+  border-radius: 2px; /* Smooth edges */
+  box-shadow: 0 0 10px 2px #007bff; /* Initial glow */
+  animation: glowingEffect 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes glowingEffect {
+  0% {
+      box-shadow: 0 0 5px 1px #007bff;
+      opacity: 0.7;
+  }
+  100% {
+      box-shadow: 0 0 15px 4px #007bff;
+      opacity: 1;
+  }
+}

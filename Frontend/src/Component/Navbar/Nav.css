@@ -1,0 +1,31 @@
+.nav-link{
+   color: rgb(184, 184, 184);
+}
+
+.nav-link.active{
+    color: white;
+}
+
+.Nav-component{
+    background-color: rgb(0, 0, 0);
+    width: 19em;
+    height: 2.6em;
+    border-radius:2em;
+    margin-left:30.5em;
+    border: 1px solid rgb(99, 99, 99);
+    margin-top: 2em;
+    padding: 0.3em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    position: fixed;
+    z-index: 100;
+}
+
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 0.28em;
+}

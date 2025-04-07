@@ -72,7 +72,7 @@ const Contact = () => {
               required
             ></textarea>
             <div className="flex-icone">
-            <button type="submit"><p>Send Message</p></button>
+            <button className="contact-button" type="submit"><p>Send Message</p></button>
             <div className="icone">
             <a href="https://www.linkedin.com/in/rijans-patoliya/"><FaLinkedin /></a>
             <a href="https://github.com/RijansPatoliya"><FaGithub /></a>

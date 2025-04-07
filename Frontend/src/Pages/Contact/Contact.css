@@ -34,41 +34,73 @@ form{
 
 input, textarea {
     background-color: rgb(12, 12, 12);
-    width: 47em;
+    width: 30em;
     border: 1px solid rgb(170, 170, 170);
     border-radius: 1em;
     color: white;
-    padding: 1em;
-}
-
-input {
-    height: 6em;
-}
-
-textarea {
-    height: 17em;
-}
-
-input::placeholder, textarea::placeholder {
+    font-size: 20px; 
+  }
+  
+  input {
+    height: 80px; 
+    padding: 10px;
+  }
+  
+  textarea {
+    height: 250px;
+    padding: 10px;
+  }
+  
+  input::placeholder, textarea::placeholder {
     color: gray;
     opacity: 0.7;
-    font-size: 1.9em;
+    font-size: 20px;
     padding: 1em;
-}
-
-button{
-    background-color: rgb(225, 226, 228);
-    width: 14em;
-    height: 5em;
-    border-radius: 1em;
-    cursor: pointer;
-}
-
-button p{
-    color: rgb(12, 12, 12);
+  }
+  
+  button {
+    background: linear-gradient(to right, #dcdbdb, #dcdcdc);
+    color: #0c0c0c;
     font-size: 1.2em;
     font-weight: 700;
-}
+    padding: 1em 2em;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 0 transparent;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #3d3d3d, #808992);
+    transition: all 0.4s ease-in-out;
+    z-index: 0;
+  }
+  
+  button:hover::before {
+    left: 0;
+  }
+  
+  button p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    transition: color 0.3s ease;
+    color: #000000  ;
+  }
+  
+  button:hover p {
+    color: rgb(235, 234, 234);
+  }
+  
 
 .flex-icone{
     display: flex;

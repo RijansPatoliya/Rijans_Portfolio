@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { FaGithub, FaExternalLinkAlt, FaPlay } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaTimes } from "react-icons/fa";
 import "./Projects.css";
 
 function Projects() {
@@ -10,27 +10,39 @@ function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [loading, setLoading] = useState(false);
   const [hoveredVideo, setHoveredVideo] = useState(null);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     fetchProjects();
   }, [activeCategory]);
 
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) {
+        setSelectedVideo(null);
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
+
   const fetchProjects = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://rijans-portfolio.onrender.com/api/projects/allProjects");
-      
-      // Filter projects based on active category
+      const response = await axios.get("http://localhost:3000/api/projects/allProjects");
+
       const filteredProjects = response.data.filter(project => {
         if (activeCategory === "All") return true;
-        
-        // Normalize category comparison
+
         const projectCategory = project.category.toLowerCase().replace("/", "-");
         const selectedCategory = activeCategory.toLowerCase().replace("/", "-");
-        
+
         return projectCategory === selectedCategory;
       });
-      
+
       setProjects(filteredProjects);
     } catch (error) {
       console.error("Error fetching projects:", error);
@@ -46,11 +58,17 @@ function Projects() {
     navigate(`/project/${formattedCategory}`);
   };
 
-  const categories = ["All", "MERN", "HTML/CSS", "Figma"];
+  const handleVideoClick = (project) => {
+    if (project.mediaType === 'video') {
+      setSelectedVideo(project);
+    }
+  };
+
+  // ✅ Updated categories
+  const categories = ["All","MERN","React","Static"];
 
   return (
     <div className="projects-section">
-    
       <div className="category-tabs">
         {categories.map((category) => (
           <button
@@ -72,42 +90,39 @@ function Projects() {
         <div className="projects-grid">
           {projects.length > 0 ? (
             projects.map((project) => (
-              <div 
-                key={project._id} 
+              <div
+                key={project._id}
                 className="project-card"
                 onMouseEnter={() => project.mediaType === 'video' && setHoveredVideo(project._id)}
                 onMouseLeave={() => setHoveredVideo(null)}
               >
-                <div className="media-container">
-                {project.mediaType === "video" ? (
-  <video 
-    className="project-media"
-    controls
-    loop={hoveredVideo === project._id}
-    muted
-    onPlay={(e) => e.target.nextSibling.style.opacity = "0"} // Hide overlay on play
-    onPause={(e) => e.target.nextSibling.style.opacity = "1"} // Show overlay on pause
-  >
-    <source src={project.mediaUrl} type="video/mp4" />
-  </video>
-) : (
-  <img
-    src={project.mediaUrl}
-    alt={project.title}
-    className="project-media"
-  />
-)}
-{project.mediaType === "video" && (
-  <div className="video-overlay">
-    <FaPlay className="play-icon" />
-  </div>
-)}
+                <div
+                  className="media-container"
+                  onClick={() => handleVideoClick(project)}
+                >
+                  {project.mediaType === "video" ? (
+                    <video
+                      className="project-media"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                    >
+                      <source src={project.mediaUrl} type="video/mp4" />
+                    </video>
+                  ) : (
+                    <img
+                      src={project.mediaUrl}
+                      alt={project.title}
+                      className="project-media"
+                    />
+                  )}
                 </div>
 
                 <div className="project-content">
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">{project.description}</p>
-                  
+
                   <div className="tech-stack">
                     {project.technologies.map((tech, index) => (
                       <span key={index} className="tech-tag">{tech}</span>
@@ -132,6 +147,23 @@ function Projects() {
               <p>No projects found in this category.</p>
             </div>
           )}
+        </div>
+      )}
+
+      {selectedVideo && (
+        <div className="video-modal-overlay" onClick={() => setSelectedVideo(null)}>
+          <div className="video-modal-content" onClick={e => e.stopPropagation()}>
+            <button className="close-modal" onClick={() => setSelectedVideo(null)}>
+              <FaTimes />
+            </button>
+            <video
+              controls
+              className="modal-video"
+              autoPlay
+            >
+              <source src={selectedVideo.mediaUrl} type="video/mp4" />
+            </video>
+          </div>
         </div>
       )}
     </div>

@@ -5,12 +5,15 @@ import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skillsData = [
-    { name: 'PHP', percentage: 85, description: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { name: 'JavaScript', percentage: 75, description: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { name: 'WordPress', percentage: 90, description: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { name: 'Python', percentage: 75, description: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { name: 'React', percentage: 70, description: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-    { name: 'Adobe XD', percentage: 80, description: 'Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+    { name: 'Node.js + Express.js ', percentage: 85, description: 'Backend runtime environment and framework used to build scalable RESTful APIs and full-stack applications.' },
+    { name: 'JavaScript', percentage: 85, description: 'A versatile programming language used for building interactive web applications and dynamic user interfaces.' },
+    { name: 'React', percentage: 80, description: 'A JavaScript library for building user interfaces, particularly single-page applications with reusable components.' },
+    { name: 'C++', percentage: 70, description: 'A powerful, high-performance programming language used for system programming, game development,and more.' },
+    { name: 'MongoDB', percentage: 75, description: 'A NoSQL database used to store flexible, JSON-like data for modern web applications.' },
+    { name: 'Tailwind', percentage: 75, description: 'A utility-first CSS framework for rapidly building custom designs without writing much CSS.' },
+    { name: 'Firebase Authentication', percentage: 75, description: 'Secure and easy-to-integrate user authentication system for login, signup, and user management.' },
+    { name: 'Cloudinary', percentage: 70, description: 'Cloud-based image and video management service used for uploading, storing, transforming, and delivering media.' },
+    { name: 'Git & GitHub', percentage: 85, description: 'Version control and collaboration platform used for efficient project management and deployment.' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

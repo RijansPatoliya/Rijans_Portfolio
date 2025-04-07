@@ -123,6 +123,7 @@
   height: 100%;
   overflow: hidden;
   background: #000;
+  cursor: pointer;
 }
 
 .project-media {
@@ -136,35 +137,6 @@
 .project-card:hover .project-media {
   transform: scale(1.05);
   filter: brightness(1);
-}
-
-.video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  pointer-events: none;
-  backdrop-filter: blur(2px);
-}
-
-.play-icon {
-  color: white;
-  width: 48px;
-  height: 48px;
-  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.5));
-  opacity: 0.9;
-  transition: all 0.3s ease;
-}
-
-.project-card:hover .play-icon {
-  transform: scale(1.1);
-  opacity: 1;
 }
 
 /* Project Content */
@@ -274,6 +246,87 @@
   transform: translateX(100%);
 }
 
+/* Video Modal */
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  cursor: pointer; /* Add cursor pointer to indicate clickable area */
+}
+
+.video-modal-content {
+  position: relative;
+  width: 90%; /* Reduced from 100% */
+  max-width: 1000px; /* Reduced from 1200px */
+  background: #111;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-video {
+  width: 100%;
+  aspect-ratio: 16/9;
+  display: block;
+}
+
+/* Improve video controls visibility and interaction */
+.modal-video::-webkit-media-controls {
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 2;
+}
+
+.modal-video::-webkit-media-controls-enclosure {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* [Rest of the CSS remains unchanged] */
+
+.close-modal {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.modal-title {
+  padding: 1rem;
+  margin: 0;
+  color: white;
+  background: linear-gradient(to top, #000, transparent);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 /* Loading Spinner */
 .loading-spinner {
   display: flex;
@@ -323,6 +376,10 @@
   .no-projects {
     grid-column: span 1;
   }
+
+  .video-modal-content {
+    margin: 0 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -352,4 +409,21 @@
   .project-content {
     padding: 1.5rem;
   }
+
+  .video-modal-overlay {
+    padding: 0;
+  }
+
+  .video-modal-content {
+    height: 100%;
+    margin: 0;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .modal-video {
+    flex: 1;
+  }
 }
+

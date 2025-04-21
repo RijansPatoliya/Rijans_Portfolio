@@ -1,76 +1,87 @@
-
 .banner-component {
-    display: flex;
-    min-height: 100vh;
-    padding: 0 10%;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  .banner-left-content {
-    max-width: 800px;
-  }
-  
-  h1 {
-    font-size: 5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: #8b8b8b;
-    }
-  
+  display: flex;
+  min-height: 100vh;
+  padding: clamp(20px, 5vw, 80px) clamp(20px, 10%, 80px);
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: clamp(20px, 5vw, 40px);
+}
 
-  .typewriter-container {
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-  }
-  
-  .static-text {
-    font-size: 3rem;
-    color: #ccc;
-    margin-right: 10px; /* Space between "I'm a" and animated text */
-  }
+.banner-left-content {
+  flex: 1;
+  min-width: min(100%, 600px);
+  max-width: 800px;
+}
 
-  
-  @keyframes type {
-    0% {
-      width: 0;
-      opacity: 1; /* Show when typing starts */
-    }
-    50% {
-      width: 13ch; /* Approx width for longest text, adjust if needed */
-      opacity: 1; /* Fully visible */
-    }
-    75% {
-      width: 13ch;
-      opacity: 1; /* Hold text */
-    }
-    100% {
-      width: 0;
-      opacity: 0; /* Erase and hide */
-    }
-  }
-  
-  .description {
-    font-size: 1.8rem;
-    line-height: 1.6;
-    color: #8b8b8b;
-    max-width: 90%;
-    margin-bottom: 2.5rem;
-  }
+.banner-Right-content {
+  flex: 1;
+  min-width: min(100%, 400px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-/* Base marquee styles */
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #8b8b8b;
+}
+
+.typewriter-container {
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.static-text {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: #ccc;
+}
+
+.dynamic-text {
+  font-size: clamp(1.6rem, 3.5vw, 2.7rem);
+  color: #ccc;
+  text-shadow: 2px 2px 10px rgba(105, 90, 201, 0.5);
+}
+
+.description {
+  font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+  line-height: 1.6;
+  color: #8b8b8b;
+  max-width: 90%;
+  margin-bottom: 2.5rem;
+  position: relative;
+  padding-left: clamp(10px, 2vw, 14px);
+}
+
+.description::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background-color: #007bff;
+  border-radius: 2px;
+  box-shadow: 0 0 10px 2px #007bff;
+  animation: glowingEffect 1.5s infinite alternate ease-in-out;
+}
+
+/* Marquee Styles */
 .marquee {
-  width: 100vw; /* Full viewport width */
+  width: 100%;
   background-color: rgb(12, 12, 12);
   color: #ffffff;
   overflow: hidden;
-  padding: 20px 0;
+  padding: clamp(10px, 3vw, 20px) 0;
 }
 
-/* Container for marquee content */
 .marquee-container {
-  margin-bottom: 27px;
+  margin-bottom: clamp(15px, 4vw, 27px);
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -80,14 +91,6 @@
   margin-bottom: 0;
 }
 
-/* Direction classes */
-.marquee-ltr,
-.marquee-rtl {
-  width: 100%;
-  overflow: hidden;
-}
-
-/* Content wrapper */
 .marquee-content {
   display: inline-flex;
   align-items: center;
@@ -98,40 +101,98 @@
   animation-iteration-count: infinite;
 }
 
-/* Left to Right animation */
 .marquee-ltr .marquee-content {
   animation-name: marquee-ltr;
 }
 
-/* Right to Left animation */
 .marquee-rtl .marquee-content {
   animation-name: marquee-rtl;
 }
 
-/* Individual items */
 .marquee-item {
   display: flex;
   align-items: center;
-  padding: 0 38px;
+  padding: 0 clamp(20px, 4vw, 38px);
   flex-shrink: 0;
-  gap: 25px;
+  gap: clamp(15px, 3vw, 25px);
 }
 
-/* Logo (image) styling */
 .logo-img {
-  width: 4.7rem; /* Match your desired size */
-  height: 4.7rem; /* Match your desired size */
-  margin-bottom: 18px;
-  object-fit: contain; /* Ensures the image scales properly without distortion */
+  width: clamp(3rem, 6vw, 4.7rem);
+  height: clamp(3rem, 6vw, 4.7rem);
+  margin-bottom: clamp(10px, 2vw, 18px);
+  object-fit: contain;
 }
 
-/* Text styling */
 .marquee-item span {
-  font-size: 1.4rem;
+  font-size: clamp(1rem, 2vw, 1.4rem);
   font-weight: 400;
 }
 
-/* Updated keyframes for true infinite scroll */
+/* Touch Container Styles */
+.touch-container {
+  display: flex;
+  position: relative;
+  padding: 40px 20px;
+  min-height: 300px;
+}
+
+.touch-heading h1 {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3em;
+  margin-left: 3em;
+  position: relative;
+  margin-top: 2em;
+}
+
+.social-links {
+  position: absolute;
+  right: 20%;
+  top: 60%;
+  transform: translateY(-50%);
+  min-width: 300px;
+}
+
+.social-links h2 {
+  margin-bottom: 1.2em;
+  font-size: 1.5rem;
+}
+
+.link {
+  display: flex;
+  gap: 4.4em;
+  align-items: center;
+  margin-bottom: 1.3em;
+}
+
+.link-title {
+  font-size: 1.2em;
+  min-width: 100px;
+}
+
+.link-url a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.link-url a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes glowingEffect {
+  0% {
+    box-shadow: 0 0 5px 1px #007bff;
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 15px 4px #007bff;
+    opacity: 1;
+  }
+}
+
 @keyframes marquee-ltr {
   0% {
     transform: translateX(0);
@@ -141,7 +202,6 @@
   }
 }
 
-/* Updated keyframes for RTL */
 @keyframes marquee-rtl {
   0% {
     transform: translateX(-25%);
@@ -151,11 +211,6 @@
   }
 }
 
-.title {
-  color: white;
-  font-size: 2rem;
-  font-weight: bold;
-}
 .gradient-text {
   font-weight: bold;
   background-image: linear-gradient(45deg, #ff00ff, #8000ff, #00ffff);
@@ -172,16 +227,7 @@
   100% { background-position: 0% 50%; }
 }
 
-.dynamic-text {
-  font-size: 2.7rem;
-  color: #ccc;
-  margin-left: 10px; /* मार्जिन एडजस्ट करो */
-  text-shadow: 2px 2px 10px rgba(105, 90, 201, 0.5); /* लाइट ग्लो इफेक्ट */
-}
-
-
-
-/* Hover effect */
+/* Hover Effects */
 .marquee-item:hover {
   transform: scale(1.1);
   transition: transform 0.3s ease;
@@ -191,68 +237,81 @@
   filter: drop-shadow(0 0 8px rgb(66, 84, 156));
 }
 
-.touch-container{
-  display: flex;
-}
-
-
-.touch-heading h1{
-  color: white;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 3em;
-  margin-left: 3em;
-  position: relative;
-  margin-top: 3em;
-}
-
-.social-links{
-  position: absolute;
-  margin-left: 55em;
-  margin-top: 4em;
-}
-
-.social-links h2{
-  margin-bottom: 1.2em;
-}
-
-.link{
-  display: flex;
-  gap: 4.4em;
-  align-items: center;
-  margin-bottom: 1.3em;
-}
-
-.link-title {
-  font-size: 1.2em;
-}
-
-
-.description {
-  position: relative;
-  padding-left: 14px; /* Adjust spacing */
-  color: #ccc; /* Text color */
-}
-
-.description::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 3px; /* Adjust thickness */
-  background-color: #007bff; /* Base blue color */
-  border-radius: 2px; /* Smooth edges */
-  box-shadow: 0 0 10px 2px #007bff; /* Initial glow */
-  animation: glowingEffect 1.5s infinite alternate ease-in-out;
-}
-
-@keyframes glowingEffect {
-  0% {
-      box-shadow: 0 0 5px 1px #007bff;
-      opacity: 0.7;
+/* Media Queries */
+@media (max-width: 768px) {
+  .banner-component {
+    text-align: center;
+    justify-content: center;
   }
-  100% {
-      box-shadow: 0 0 15px 4px #007bff;
-      opacity: 1;
+
+  .typewriter-container {
+    justify-content: center;
+  }
+
+  .description {
+    margin: 0 auto 2.5rem;
+    text-align: left;
+  }
+
+  .banner-Right-content {
+    order: -1;
+  }
+
+  .touch-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .touch-heading h1 {
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .social-links {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    margin-top: 2em;
+  }
+
+  .link {
+    gap: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .marquee-item {
+    padding: 0 15px;
+  }
+
+  .logo-img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 8px;
+  }
+
+  .touch-heading h1 {
+    font-size: 2em;
+    margin-left: 0;
+  }
+
+  .social-links {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .link {
+    gap: 1.5em;
+  }
+
+  .link-title {
+    min-width: 80px;
+    font-size: 1em;
+  }
+
+  .link-url a {
+    font-size: 1em;
   }
 }

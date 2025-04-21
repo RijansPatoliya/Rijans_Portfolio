@@ -39,41 +39,39 @@ input, textarea {
     border-radius: 1em;
     color: white;
     font-size: 20px; 
-  }
+}
   
-  input {
+input {
     height: 80px; 
     padding: 10px;
-  }
+}
   
-  textarea {
+textarea {
     height: 250px;
     padding: 10px;
-  }
+}
   
-  input::placeholder, textarea::placeholder {
+input::placeholder, textarea::placeholder {
     color: gray;
     opacity: 0.7;
     font-size: 20px;
     padding: 1em;
-  }
+}
 
-
-  .contact-button {
-  background-color: rgb(209, 207, 207);
-  padding: 10px 20px;
-  border: 2px solid black;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 13em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+.contact-button {
+    background-color: rgb(209, 207, 207);
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 13em;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .contact-button p{
-  color: black;
+    color: black;
 }
-
 
 .flex-icone{
     display: flex;
@@ -87,9 +85,68 @@ input, textarea {
     gap: 0.8em;
 }
 
-/* Mobile devices ke liye ensure karo ke font bada ho */
+@media screen and (max-width: 1200px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-text {
+        margin: 2em auto;
+        text-align: center;
+    }
+    
+    .contact-form {
+        margin: 2em auto;
+        padding: 2em;
+    }
+    
+    form {
+        margin: 0 auto;
+    }
+}
+
 @media screen and (max-width: 768px) {
     input, textarea {
-        font-size: 2em !important;
+        width: 100%;
+        max-width: 20em;
+    }
+    
+    .flex-icone {
+        gap: 4em;
+        justify-content: center;
+    }
+    
+    .contact-text h1 {
+        font-size: 3em;
+    }
+    
+    .contact-text p {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-form {
+        height: auto;
+        padding: 1em;
+    }
+    
+    input {
+        height: 60px;
+    }
+    
+    textarea {
+        height: 200px;
+    }
+    
+    .flex-icone {
+        flex-direction: column;
+        align-items: center;
+        gap: 2em;
+    }
+    
+    .contact-button {
+        width: 100%;
+        max-width: 20em;
     }
 }

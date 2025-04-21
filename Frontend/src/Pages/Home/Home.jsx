@@ -1,13 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import './Home.css';
 import SVG from "../../Component/Svg_photo/Svg_photo"
 import About from '../../Component/About/About';
 import Skill from '../../Component/Skills/Skill';
 
 const Home = () => {
-  
   const roles = ["Web Developer", "Problem Solver", "Tech Innovator"];
   const [currentRole, setCurrentRole] = useState(0);
 
@@ -18,9 +17,8 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-
   const firstRowLogos = [
-    { src: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png", name: "React" }, // Update paths as needed
+    { src: "https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png", name: "React" },
     { src: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/187_Js_logo_logos-1024.png", name: "JavaScript" },
     { src: "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg", name: "Tailwind" },
     { src: "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/404/c_logo-128.png", name: "C++" }
@@ -40,7 +38,6 @@ const Home = () => {
     { src: "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-128.png", name: "Figma" }
   ];
 
-  // Function to render a row of logos multiple times (unchanged animation structure)
   const renderLogos = (logos, times = 4) => {
     const items = [];
     for (let i = 0; i < times; i++) {
@@ -56,40 +53,38 @@ const Home = () => {
     return items;
   };
 
-
   return (
     <>
-    <div className="banner-component">
-    <div className="banner-left-content">
-      <h1>
-        Hi! I'm {" "}
-        <span className="gradient-text">Rijans</span>
-      </h1>
-      <div className="typewriter-container">
-        <div className="static-text">I'm a</div>
-        <motion.div
-          key={currentRole}
-          initial={{ opacity: 0, x: -30, filter: "blur(8px)" }}
-          animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
-          exit={{ opacity: 0, x: 30, filter: "blur(8px)" }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="dynamic-text"
-        >
-          {roles[currentRole]}
-        </motion.div>
-      </div>
-      <p className="description">
-        A Passionate MERN Stack Developer, Building Seamless and Engaging Web Experiences with Innovation and Precision.
-      </p>
-    </div>
+      <div className="banner-component">
+        <div className="banner-left-content">
+          <h1>
+            Hi! I'm {" "}
+            <span className="gradient-text">Rijans</span>
+          </h1>
+          <div className="typewriter-container">
+            <div className="static-text">I'm a</div>
+            <motion.div
+              key={currentRole}
+              initial={{ opacity: 0, x: -30, filter: "blur(8px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, x: 30, filter: "blur(8px)" }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="dynamic-text"
+            >
+              {roles[currentRole]}
+            </motion.div>
+          </div>
+          <p className="description">
+            A Passionate MERN Stack Developer, Building Seamless and Engaging Web Experiences with Innovation and Precision.
+          </p>
+        </div>
 
-      <div className="banner-Right-content">
-        <SVG />
+        <div className="banner-Right-content">
+          <SVG />
+        </div>
       </div>
-    </div>
 
-    <div className="marquee">
-        {/* First Line - Left to Right */}
+      <div className="marquee">
         <div className="marquee-container">
           <div className="marquee-ltr">
             <div className="marquee-content">
@@ -98,7 +93,6 @@ const Home = () => {
           </div>
         </div>
         
-        {/* Second Line - Right to Left */}
         <div className="marquee-container">
           <div className="marquee-rtl">
             <div className="marquee-content">
@@ -107,7 +101,6 @@ const Home = () => {
           </div>
         </div>
         
-        {/* Third Line - Left to Right */}
         <div className="marquee-container">
           <div className="marquee-ltr">
             <div className="marquee-content">
@@ -117,46 +110,43 @@ const Home = () => {
         </div>
       </div>
 
-    <About />
-    <Skill />
+      <About />
+      <Skill />
 
-    <div className="touch-container">
-      <div className="touch-heading">
-        <h1>GET IN TOUCH</h1>
+      <div className="touch-container">
+        <div className="touch-heading">
+          <h1>GET IN TOUCH</h1>
+        </div>
+
+        <div className="social-links">
+          <h2>Social-links</h2>
+          <div className="link">
+            <div className="link-title">
+              Instagram:
+            </div>
+            <div className="link-url">
+              <a href="https://www.linkedin.com/in/rijans-patoliya/"><p>Rijans Patoliya</p></a>
+            </div>
+          </div>
+          <div className="link">
+            <div className="link-title">
+              Linkdin:
+            </div>
+            <div className="link-url">
+              <a href="https://www.linkedin.com/in/rijans-patoliya/">Rijans Patoliya</a>
+            </div>
+          </div>
+          <div className="link">
+            <div className="link-title">
+              GitHub:
+            </div>
+            <div className="link-url">
+              <a href="https://github.com/RijansPatoliya">Rijans Patoliya</a>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div className="social-links">
-        <h2>Social-links</h2>
-        <div className="link">
-        <div className="link-title">
-          Instagram:
-        </div>
-        <div className="link-url">
-          <a href="https://www.linkedin.com/in/rijans-patoliya/"><p>Rijans Patoliya</p></a>
-        </div>
-        </div>
-     <div className="link">
-     <div className="link-title">
-          Linkdin:
-        </div>
-        <div className="link-url">
-          <a href="https://www.linkedin.com/in/rijans-patoliya/">Rijans Patoliya</a>
-        </div>
-     </div>
-       <div className="link">
-       <div className="link-title">
-          GitHub:
-        </div>
-        <div className="link-url">
-          <a href="https://github.com/RijansPatoliya">Rijans Patoliya</a>
-        </div>
-       </div>
-      </div>
-    </div>
-
     </>
-    
-    
   );
 };
 

@@ -7,7 +7,6 @@ import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -43,8 +42,8 @@ const Contact = () => {
       <ToastContainer position="top-right" autoClose={3000} />
       <div className="contact-container">
         <div className="contact-text">
-            <h1>Contact.</h1>
-            <p>Let's build something amazing together</p>
+          <h1>Contact.</h1>
+          <p>Let's build something amazing together</p>
         </div>
         <div className="contact-form">
           <form onSubmit={handleSubmit}>
@@ -72,12 +71,20 @@ const Contact = () => {
               required
             ></textarea>
             <div className="flex-icone">
-            <button className="contact-button" type="submit"><p>Send Message</p></button>
-            <div className="icone">
-            <a href="https://www.linkedin.com/in/rijans-patoliya/"><FaLinkedin /></a>
-            <a href="https://github.com/RijansPatoliya"><FaGithub /></a>
-            <a href="#"><FaInstagram /></a>
-            </div>
+              <button className="contact-button" type="submit">
+                <p>Send Message</p>
+              </button>
+              <div className="icone">
+                <a href="https://www.linkedin.com/in/rijans-patoliya/">
+                  <FaLinkedin />
+                </a>
+                <a href="https://github.com/RijansPatoliya">
+                  <FaGithub />
+                </a>
+                <a href="#">
+                  <FaInstagram />
+                </a>
+              </div>
             </div>
           </form>
         </div>

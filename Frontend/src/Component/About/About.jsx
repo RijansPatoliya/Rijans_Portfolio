@@ -52,9 +52,6 @@ const About = () => {
               <span className="portfolio-detail-label">Name:</span> Rijans Patoliya
             </div>
             <div className="portfolio-detail-item">
-              <span className="portfolio-detail-label">Age:</span> 19 Years
-            </div>
-            <div className="portfolio-detail-item">
               <span className="portfolio-detail-label">From:</span> Ahemdabad, Gujarat
             </div>
             <div className="portfolio-detail-item">

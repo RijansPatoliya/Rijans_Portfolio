@@ -10,7 +10,7 @@ const app = express();
 // Middleware
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow frontend origin
+    origin: "https://event-tracker-frontend-l8ve.onrender.com", // Allow frontend origin
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

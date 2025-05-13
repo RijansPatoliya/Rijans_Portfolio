@@ -8,13 +8,7 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(
-  cors({
-    origin: "https://event-tracker-frontend-l8ve.onrender.com", // Allow frontend origin
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 // Routes

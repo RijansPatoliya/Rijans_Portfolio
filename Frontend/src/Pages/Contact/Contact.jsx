@@ -75,10 +75,10 @@ const Contact = () => {
                 <p>Send Message</p>
               </button>
               <div className="icone">
-                <a href="https://www.linkedin.com/in/rijans-patoliya/">
+                <a href="https://www.linkedin.com/in/rijans-patoliya/" target="_blank">
                   <FaLinkedin />
                 </a>
-                <a href="https://github.com/RijansPatoliya">
+                <a href="https://github.com/RijansPatoliya" target="_blank">
                   <FaGithub />
                 </a>
                 <a href="#">

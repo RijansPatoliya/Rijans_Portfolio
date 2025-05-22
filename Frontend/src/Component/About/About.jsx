@@ -64,7 +64,7 @@ const About = () => {
 
           {/* Download CV and Social Links */}
           <div className="portfolio-actions">
-            <a href="/path-to-your-cv.pdf" download className="portfolio-download-btn">
+            <a href="/Professional_Resume.pdf" download="Rijans_Patoliya_CV.pdf" className="portfolio-download-btn">
               <FaDownload className="portfolio-download-icon" /> Download CV
             </a>
             <div className="portfolio-social-links">

@@ -122,18 +122,10 @@ const Home = () => {
           <h2>Social-links</h2>
           <div className="link">
             <div className="link-title">
-              Instagram:
-            </div>
-            <div className="link-url">
-              <a href="https://www.linkedin.com/in/rijans-patoliya/"><p>Rijans Patoliya</p></a>
-            </div>
-          </div>
-          <div className="link">
-            <div className="link-title">
               Linkdin:
             </div>
             <div className="link-url">
-              <a href="https://www.linkedin.com/in/rijans-patoliya/">Rijans Patoliya</a>
+              <a href="https://www.linkedin.com/in/rijans-patoliya/" target='_blank'>Rijans Patoliya</a>
             </div>
           </div>
           <div className="link">
@@ -141,7 +133,7 @@ const Home = () => {
               GitHub:
             </div>
             <div className="link-url">
-              <a href="https://github.com/RijansPatoliya">Rijans Patoliya</a>
+              <a href="https://github.com/RijansPatoliya" target='_blank'>Rijans Patoliya</a>
             </div>
           </div>
         </div>

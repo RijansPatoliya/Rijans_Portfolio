@@ -1,4 +1,4 @@
-/* Projects Section Styles */
+/* ================= Projects Section ================= */
 .projects-section {
   background-color: #0a0a0a;
   min-height: 100vh;
@@ -17,14 +17,13 @@
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
 }
 
-/* Category Tabs */
+/* ================= Category Tabs ================= */
 .category-tabs {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-bottom: 4rem;
   flex-wrap: wrap;
-  margin-top: 5em;
+  margin: 5em 0 4rem;
   position: relative;
 }
 
@@ -36,11 +35,11 @@
   height: 3.5em;
   border-radius: 12px;
   cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 0.875rem;
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .category-tab:hover {
@@ -66,7 +65,7 @@
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
 }
 
-/* Projects Grid */
+/* ================= Projects Grid ================= */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -75,34 +74,26 @@
   margin: 0 auto;
 }
 
-/* Project Card */
+/* ================= Project Card ================= */
 .project-card {
   background: rgba(255, 255, 255, 0.02);
   border-radius: 16px;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   height: 350px;
-  backdrop-filter: blur(10px);
   position: relative;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   border-radius: 16px;
   padding: 1px;
-  background: linear-gradient(
-    45deg,
-    transparent,
-    rgba(255, 255, 255, 0.1),
-    transparent
-  );
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -116,19 +107,16 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-
-/* Media Container */
+/* ================= Media Container ================= */
 .media-container {
   position: relative;
   width: 50%;
   height: 100%;
   overflow: hidden;
   background: #000;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
 }
 
 .project-media {
@@ -136,22 +124,21 @@
   height: 100%;
   object-fit: contain;
   object-position: center;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   filter: brightness(0.9);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* For videos specifically - maintain aspect ratio but fill better */
 video.project-media {
-  object-fit: cover;
+  object-fit: contain;
+   cursor: pointer;
 }
 
-/* Preserve the hover effect */
 .project-card:hover .project-media {
   transform: scale(1.05);
   filter: brightness(1);
 }
 
-/* Project Content */
+/* ================= Project Content ================= */
 .project-content {
   padding: 2rem;
   width: 50%;
@@ -188,7 +175,7 @@ video.project-media {
   flex-grow: 1;
 }
 
-/* Tech Stack */
+/* ================= Tech Stack ================= */
 .tech-stack {
   display: flex;
   flex-wrap: wrap;
@@ -202,7 +189,6 @@ video.project-media {
   padding: 0.5rem 1rem;
   border-radius: 8px;
   font-size: 0.75rem;
-  letter-spacing: 0.5px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   backdrop-filter: blur(5px);
@@ -214,7 +200,7 @@ video.project-media {
   transform: translateY(-1px);
 }
 
-/* Project Links */
+/* ================= Project Links ================= */
 .project-links {
   display: flex;
   gap: 1rem;
@@ -229,20 +215,18 @@ video.project-media {
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  font-size: 0.875rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.875rem;
   position: relative;
   overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-link::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transform: translateX(-100%);
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -258,13 +242,10 @@ video.project-media {
   transform: translateX(100%);
 }
 
-/* Video Modal */
+/* ================= Video Modal ================= */
 .video-modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.9);
   display: flex;
   align-items: center;
@@ -272,13 +253,13 @@ video.project-media {
   z-index: 1000;
   padding: 2rem;
   backdrop-filter: blur(8px);
-  cursor: pointer; /* Add cursor pointer to indicate clickable area */
+  cursor: pointer;
 }
 
 .video-modal-content {
   position: relative;
-  width: 90%; /* Reduced from 100% */
-  max-width: 1000px; /* Reduced from 1200px */
+  width: 90%;
+  max-width: 1000px;
   background: #111;
   border-radius: 16px;
   overflow: hidden;
@@ -291,27 +272,21 @@ video.project-media {
   display: block;
 }
 
-/* Improve video controls visibility and interaction */
-.modal-video::-webkit-media-controls {
+/* Improve video control visibility */
+.modal-video::-webkit-media-controls,
+.modal-video::-webkit-media-controls-enclosure {
   opacity: 1 !important;
   visibility: visible !important;
   z-index: 2;
 }
 
-.modal-video::-webkit-media-controls-enclosure {
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-/* [Rest of the CSS remains unchanged] */
-
+/* Close Button */
 .close-modal {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
+  background: rgba(195, 182, 182, 0.5);
+  border: 1px solid red;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -328,18 +303,63 @@ video.project-media {
   transform: scale(1.1);
 }
 
-.modal-title {
-  padding: 1rem;
-  margin: 0;
-  color: white;
-  background: linear-gradient(to top, #000, transparent);
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+/* Error Message */
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
 }
 
-/* Loading Spinner */
+.retry-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Load More Button */
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.load-more-button {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.load-more-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.load-more-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading State */
 .loading-spinner {
   display: flex;
   flex-direction: column;
@@ -352,90 +372,36 @@ video.project-media {
 .spinner {
   width: 50px;
   height: 50px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top: 3px solid rgba(255, 255, 255, 0.9);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top: 3px solid #fff;
   border-radius: 50%;
   animation: spin 1s linear infinite;
   margin-bottom: 1rem;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* No Projects Message */
-.no-projects {
-  text-align: center;
-  padding: 3rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 1.2rem;
-  grid-column: span 2;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
   .projects-grid {
     grid-template-columns: 1fr;
   }
-
-  .loading-spinner,
-  .no-projects {
-    grid-column: span 1;
-  }
-
-  .video-modal-content {
-    margin: 0 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .projects-section {
-    padding: 2rem 1rem;
-  }
-
-  .category-tab {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-  }
-
+  
   .project-card {
-    flex-direction: column;
     height: auto;
+    flex-direction: column;
   }
-
+  
   .media-container,
   .project-content {
     width: 100%;
   }
-
+  
   .media-container {
-    height: 200px;
-  }
-
-  .project-content {
-    padding: 1.5rem;
-  }
-
-  .video-modal-overlay {
-    padding: 0;
-  }
-
-  .video-modal-content {
-    height: 100%;
-    margin: 0;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .modal-video {
-    flex: 1;
+    height:100%;
   }
 }
-

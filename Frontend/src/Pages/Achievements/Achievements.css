@@ -1,0 +1,235 @@
+.achievements-section {
+  padding: 120px 20px;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.achievements-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.achievements-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  background: linear-gradient(to right, #FFD700, #FFFFFF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.trophy-icon {
+  color: #FFD700;
+  animation: trophy-glow 2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.6));
+  width: 1.2em;
+  height: 1.2em;
+}
+
+@keyframes trophy-glow {
+  from {
+    transform: scale(1) rotate(0deg);
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  }
+  to {
+    transform: scale(1.15) rotate(5deg);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9));
+  }
+}
+
+.achievements-subtitle {
+  font-size: 1.1rem;
+  color: #d1d5db;
+  letter-spacing: 1.2px;
+  margin-top: 15px;
+  font-style: italic;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
+}
+
+.achievement-card {
+  border: 1px solid white;
+  border-radius: 16px;
+  padding: 20px;
+  width: 19em;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.achievement-card:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 0;
+  background: linear-gradient(to bottom, #5aa069, #FF6B6B);
+  transition: height 0.4s ease;
+}
+
+.achievement-card:hover:before {
+  height: 100%;
+}
+
+.achievement-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.achievement-logo {
+  max-width: 110px;
+  max-height: 110px;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.achievement-card:hover .achievement-logo {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.achievement-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.achievement-card-description {
+  font-size: 1rem;
+  color: #d1d5db;
+  line-height: 1.6;
+  text-align: center;
+  flex-grow: 1;
+  margin-bottom: 25px;
+}
+
+.certification-badge {
+  background: linear-gradient(90deg, #201f22, #2f2538);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: center;
+  transition: all 0.3s ease;
+}
+
+.certification-badge .trophy-icon {
+  animation: badge-trophy-spin 2s linear infinite;
+}
+
+.trophy-image{
+width: 1em;
+height: 1em;
+margin: 0 0.05em 0 0.1em;
+vertical-align: -0.1em;
+}
+
+@keyframes badge-trophy-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.achievement-card:hover .certification-badge {
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .achievements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .achievements-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .achievements-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-title {
+    font-size: 2.2rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .achievements-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .achievement-card-title {
+    font-size: 1.3rem;
+    min-height: 60px;
+  }
+
+  .achievement-card-description {
+    font-size: 0.95rem;
+  }
+
+  .achievement-logo-container {
+    height: 120px;
+  }
+
+  .achievement-logo {
+    max-width: 90px;
+    max-height: 90px;
+  }
+}

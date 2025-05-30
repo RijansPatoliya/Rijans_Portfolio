@@ -4,6 +4,7 @@ import Nav from './Component/Navbar/Nav'
 import Home from './Pages/Home/Home'
 import Contact from "./Pages/Contact/Contact";
 import Projects from "./Pages/Projects/Projects";
+import Achievments from "./Pages/Achievements/Achievements";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />}/>
         <Route path="/project/:category?" element={<Projects />} /> {/* ✅ Dynamic category */}
+        <Route path="/achievements" element={<Achievments />} /> 
        </Routes>
     </Router>
     </>

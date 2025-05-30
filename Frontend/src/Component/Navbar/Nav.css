@@ -9,7 +9,7 @@
   
   .Nav-component {
     background-color: rgb(0, 0, 0);
-    width: min(90%, 19em);
+    width: min(95%, 25em);
     height: 2.6em;
     border-radius: 2em;
     margin: 2em auto;

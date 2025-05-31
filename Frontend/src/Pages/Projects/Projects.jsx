@@ -6,7 +6,7 @@ import "./Projects.css";
 
 function Projects() {
   const navigate = useNavigate();
-  const { category } = useParams(); // Get the category from URL
+  const { category } = useParams();
   const [projects, setProjects] = useState([]);
   const [activeCategory, setActiveCategory] = useState("All");
   const [loading, setLoading] = useState(false);
@@ -14,52 +14,60 @@ function Projects() {
 
   const categories = ["All", "Fullstack", "Frontend"];
 
+  // Sync activeCategory with URL param
   useEffect(() => {
-    // Set active category from URL (if exists)
     if (category) {
       const formattedCategory = category.replace("-", "/").toLowerCase();
-      const found = categories.find(cat => cat.toLowerCase() === formattedCategory);
+      const found = categories.find(
+        (cat) => cat.toLowerCase() === formattedCategory
+      );
       if (found) setActiveCategory(found);
+      else setActiveCategory("All");
     } else {
       setActiveCategory("All");
     }
   }, [category]);
 
+  // Fetch projects whenever activeCategory changes
   useEffect(() => {
+    const fetchProjects = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          "https://rijans-portfolio-backend.onrender.com/api/projects/allProjects"
+        );
+
+        const filtered = response.data.filter((project) => {
+          if (activeCategory === "All") return true;
+          const projectCategory = project.category.toLowerCase().replace("/", "-");
+          const selectedCategory = activeCategory.toLowerCase().replace("/", "-");
+          return projectCategory === selectedCategory;
+        });
+
+        setProjects(filtered);
+      } catch (err) {
+        console.error("Error fetching projects:", err);
+        setProjects([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
     fetchProjects();
   }, [activeCategory]);
 
+  // Close video modal on ESC key press
   useEffect(() => {
     const handleEsc = (event) => {
-      if (event.keyCode === 27) {
+      if (event.key === "Escape") {
         setSelectedVideo(null);
       }
     };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
   }, []);
 
-  const fetchProjects = async () => {
-    setLoading(true);
-    try {
-      const response = await axios.get("https://rijans-portfolio-backend.onrender.com/api/projects/allProjects");
-
-      const filtered = response.data.filter(project => {
-        if (activeCategory === "All") return true;
-        const projectCategory = project.category.toLowerCase().replace("/", "-");
-        const selectedCategory = activeCategory.toLowerCase().replace("/", "-");
-        return projectCategory === selectedCategory;
-      });
-
-      setProjects(filtered);
-    } catch (err) {
-      console.error("Error fetching projects:", err);
-      setProjects([]);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  // Change category and update URL
   const handleCategoryChange = (category) => {
     setActiveCategory(category);
     const formatted = category.toLowerCase().replace("/", "-");
@@ -88,7 +96,7 @@ function Projects() {
       ) : (
         <div className="projects-grid">
           {projects.length > 0 ? (
-            projects.map(project => (
+            projects.map((project) => (
               <div key={project._id} className="project-card">
                 <div
                   className="media-container"
@@ -105,14 +113,17 @@ function Projects() {
                       loop
                       muted
                       playsInline
+                      preload="metadata"
                     >
                       <source src={project.mediaUrl} type="video/mp4" />
+                      Sorry, your browser doesn't support embedded videos.
                     </video>
                   ) : (
                     <img
                       src={project.mediaUrl}
                       alt={project.title}
                       className="project-media"
+                      loading="lazy"
                     />
                   )}
                 </div>
@@ -123,15 +134,29 @@ function Projects() {
 
                   <div className="tech-stack">
                     {project.technologies.map((tech, idx) => (
-                      <span key={idx} className="tech-tag">{tech}</span>
+                      <span key={idx} className="tech-tag">
+                        {tech}
+                      </span>
                     ))}
                   </div>
 
                   <div className="project-links">
-                    <a href={project.codeUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <a
+                      href={project.codeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                      aria-label={`${project.title} code repository`}
+                    >
                       <FaGithub size={18} /> <span>Code</span>
                     </a>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="project-link"
+                      aria-label={`${project.title} live demo`}
+                    >
                       <FaExternalLinkAlt size={18} /> <span>Live Demo</span>
                     </a>
                   </div>
@@ -147,13 +172,24 @@ function Projects() {
       )}
 
       {selectedVideo && (
-        <div className="video-modal-overlay" onClick={() => setSelectedVideo(null)}>
-          <div className="video-modal-content" onClick={e => e.stopPropagation()}>
-            <button className="close-modal" onClick={() => setSelectedVideo(null)}>
-              <FaTimes className="cancle-button"/>
+        <div
+          className="video-modal-overlay"
+          onClick={() => setSelectedVideo(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Project video modal"
+        >
+          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button
+              className="close-modal"
+              onClick={() => setSelectedVideo(null)}
+              aria-label="Close video modal"
+            >
+              <FaTimes className="cancel-button" />
             </button>
             <video controls className="modal-video" autoPlay>
               <source src={selectedVideo.mediaUrl} type="video/mp4" />
+              Sorry, your browser doesn't support embedded videos.
             </video>
           </div>
         </div>

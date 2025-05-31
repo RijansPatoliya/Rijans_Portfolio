@@ -6,6 +6,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: clamp(20px, 5vw, 40px);
+  margin-left: 3em;
 }
 
 .banner-left-content {

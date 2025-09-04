@@ -11,9 +11,9 @@ const Skills = () => {
     { name: 'C++', percentage: 70, description: 'A powerful, high-performance programming language used for system programming, game development,and more.' },
     { name: 'MongoDB', percentage: 75, description: 'A NoSQL database used to store flexible, JSON-like data for modern web applications.' },
     { name: 'Tailwind', percentage: 75, description: 'A utility-first CSS framework for rapidly building custom designs without writing much CSS.' },
-    { name: 'Firebase Authentication', percentage: 75, description: 'Secure and easy-to-integrate user authentication system for login, signup, and user management.' },
-    { name: 'Cloudinary', percentage: 70, description: 'Cloud-based image and video management service used for uploading, storing, transforming, and delivering media.' },
-    { name: 'Git & GitHub', percentage: 85, description: 'Version control and collaboration platform used for efficient project management and deployment.' },
+    {name : 'NextJs', percentage: 70, description: 'A React framework for building server-side rendered and statically generated web applications with ease.'},
+    {name : 'Java', percentage: 70, description: 'A versatile, object-oriented programming language used for building cross-platform applications, from mobile to enterprise systems.'},
+    {name : 'MySQL', percentage: 70, description: 'A relational database management system used for structured data storage and retrieval in web applications.'},
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

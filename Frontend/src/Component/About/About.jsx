@@ -65,7 +65,7 @@ const About = () => {
           {/* Download CV and Social Links */}
           <div className="portfolio-actions">
   <a
-    href="https://drive.google.com/file/d/1rTcdNzc11dmsHJgHplBT7PRwFLuW5WLC/view?usp=sharing"
+    href="https://drive.google.com/drive/folders/1zdPuWq96ijZxpByOiUjStc1ZczAsliGM"
     target="_blank"
     rel="noopener noreferrer"
     className="portfolio-download-btn"
@@ -73,13 +73,13 @@ const About = () => {
     <FaDownload className="portfolio-download-icon" /> SEE MY RESUME
   </a>
   <div className="portfolio-social-links">
-    <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer">
+    <a href="#" target="_blank" rel="noopener noreferrer">
       <FaTwitter className="portfolio-social-icon" />
     </a>
-    <a href="https://instagram.com/yourusername" target="_blank" rel="noopener noreferrer">
+    <a href="#" target="_blank" rel="noopener noreferrer">
       <FaInstagram className="portfolio-social-icon" />
     </a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.linkedin.com/in/rijans-patoliya/" target="_blank" rel="noopener noreferrer">
       <FaLinkedin className="portfolio-social-icon" />
     </a>
   </div>

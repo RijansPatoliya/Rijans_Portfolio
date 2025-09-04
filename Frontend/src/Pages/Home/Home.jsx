@@ -25,17 +25,17 @@ const Home = () => {
   ];
   
   const secondRowLogos = [
-    { src: "https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-html-5-512.png", name: "HTML5" },
+    { src: "https://raw.githubusercontent.com/bestofjs/bestofjs/aa8cb6153b81b9da303c39b0d59fd00c5d9584e3/apps/web/public/logos/nextjs.dark.svg", name: "NextJs" },
     { src: "https://cdn1.iconfinder.com/data/icons/logotypes/32/badge-css-3-512.png", name: "CSS3" },
-    { src: "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/404/c_logo-128.png", name: "C++" },
+    { src: "https://cdn-icons-png.flaticon.com/512/226/226777.png", name: "Java" },
     { src: "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/233_Node_Js_logo-128.png", name: "Node.js" }
   ];
   
   const thirdRowLogos = [
     { src: "https://icon.icepanel.io/Technology/svg/C.svg", name: "C" },
     { src: "https://cdn4.iconfinder.com/data/icons/google-i-o-2016/512/google_firebase-2-128.png", name: "Firebase" },
-    { src: "https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_github-128.png", name: "GitHub" },
-    { src: "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-128.png", name: "Figma" }
+    { src: "https://cdn-icons-png.flaticon.com/512/5968/5968313.png?utm_source=chatgpt.com", name: "MySQL" },
+    { src: "https://cdn.iconscout.com/icon/free/png-512/free-mongodb-3629020-3030245.png", name: "MongoDB" }
   ];
 
   const renderLogos = (logos, times = 4) => {
@@ -75,7 +75,7 @@ const Home = () => {
             </motion.div>
           </div>
           <p className="description">
-            A Passionate MERN Stack Developer, Building Seamless and Engaging Web Experiences with Innovation and Precision.
+            A Passionate Full Stack Developer, Building Seamless and Engaging Web Experiences with Innovation and Precision.
           </p>
         </div>
 

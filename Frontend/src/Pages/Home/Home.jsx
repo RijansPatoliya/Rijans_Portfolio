@@ -121,19 +121,13 @@ const Home = () => {
         <div className="social-links">
           <h2>Social-links</h2>
           <div className="link">
-            <div className="link-title">
-              Linkdin:
-            </div>
             <div className="link-url">
-              <a href="https://www.linkedin.com/in/rijans-patoliya/" target='_blank'>Rijans Patoliya</a>
+              <a href="https://www.linkedin.com/in/rijans-patoliya/" target='_blank'> Linkdin ➱</a>
             </div>
           </div>
           <div className="link">
-            <div className="link-title">
-              GitHub:
-            </div>
             <div className="link-url">
-              <a href="https://github.com/RijansPatoliya" target='_blank'>Rijans Patoliya</a>
+                <a href="https://github.com/RijansPatoliya" target='_blank'>GitHub ➱</a>
             </div>
           </div>
         </div>

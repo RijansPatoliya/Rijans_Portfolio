@@ -39,12 +39,12 @@ const About = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <h2 className="portfolio-subheading">Who Am I?</h2>
-          <h1 className="portfolio-heading">
-          I’m Rijans Patoliya, a Web Developer & passionate about problem-solving.
-          </h1>
-          <p className="portfolio-description">
-          I am Rijans Patoliya, a first-year B.Tech student with a strong passion for web development and technology. I am dedicated to solving real-world problems through coding and have earned accolades for my projects in various hackathons. 
-          </p>
+         <h1 className="portfolio-heading">
+          I'm Rijans Patoliya, full-stack web developer.
+</h1>
+<p className="portfolio-description">
+          Second-year B.Tech student who loves building web applications. I work on both frontend and backend to create apps that are fast and user-friendly. I write clean code and focus on making things better every day. Let's build something awesome together.
+</p>
 
           {/* Details Grid */}
           <div className="portfolio-details-grid">
@@ -73,12 +73,6 @@ const About = () => {
     <FaDownload className="portfolio-download-icon" /> SEE MY RESUME
   </a>
   <div className="portfolio-social-links">
-    <a href="#" target="_blank" rel="noopener noreferrer">
-      <FaTwitter className="portfolio-social-icon" />
-    </a>
-    <a href="#" target="_blank" rel="noopener noreferrer">
-      <FaInstagram className="portfolio-social-icon" />
-    </a>
     <a href="https://www.linkedin.com/in/rijans-patoliya/" target="_blank" rel="noopener noreferrer">
       <FaLinkedin className="portfolio-social-icon" />
     </a>

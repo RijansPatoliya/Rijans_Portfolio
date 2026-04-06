@@ -5,15 +5,17 @@ import { motion } from 'framer-motion';
 
 const Skills = () => {
   const skillsData = [
-    { name: 'Node.js + Express.js ', percentage: 85, description: 'Backend runtime environment and framework used to build scalable RESTful APIs and full-stack applications.' },
-    { name: 'JavaScript', percentage: 85, description: 'A versatile programming language used for building interactive web applications and dynamic user interfaces.' },
-    { name: 'React', percentage: 80, description: 'A JavaScript library for building user interfaces, particularly single-page applications with reusable components.' },
-    { name: 'C++', percentage: 70, description: 'A powerful, high-performance programming language used for system programming, game development,and more.' },
-    { name: 'MongoDB', percentage: 75, description: 'A NoSQL database used to store flexible, JSON-like data for modern web applications.' },
-    { name: 'Tailwind', percentage: 75, description: 'A utility-first CSS framework for rapidly building custom designs without writing much CSS.' },
-    {name : 'NextJs', percentage: 70, description: 'A React framework for building server-side rendered and statically generated web applications with ease.'},
-    {name : 'Java', percentage: 70, description: 'A versatile, object-oriented programming language used for building cross-platform applications, from mobile to enterprise systems.'},
-    {name : 'MySQL', percentage: 70, description: 'A relational database management system used for structured data storage and retrieval in web applications.'},
+    { name: 'JavaScript (ES6+)', percentage: 85, description: 'Programming language for building interactive websites and web applications.' },
+    { name: 'React.js', percentage: 85, description: 'JavaScript library for building fast, reusable web interfaces.' },
+    { name: 'Node.js + Express.js', percentage: 85, description: 'Backend tools for building servers, APIs, and full-stack applications.' },
+    { name: 'Next.js', percentage: 80, description: 'React framework for building modern, optimized web applications.' },
+    { name: 'MongoDB', percentage: 80, description: 'NoSQL database for storing flexible data in web apps.' },
+    { name: 'PostgreSQL + MySQL', percentage: 75, description: 'Relational databases for structured data storage and management.' },
+    { name: 'Tailwind CSS', percentage: 80, description: 'CSS framework for quickly styling and designing beautiful websites.' },
+    { name: 'Java', percentage: 70, description: 'Programming language for building applications and systems.' },
+    { name: 'C++', percentage: 70, description: 'Programming language for system programming and high-performance applications.' },
+    { name: 'Git + GitHub', percentage: 85, description: 'Version control tools for managing code and collaborating with teams.' },
+    { name: 'Docker', percentage: 70, description: 'Tool for packaging and running applications in containers.' },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

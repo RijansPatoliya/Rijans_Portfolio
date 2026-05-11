@@ -13,7 +13,9 @@ import {
   SiGithub,
   SiTypescript,
   SiPython,
-  SiVuedotjs
+  SiVuedotjs,
+  SiNextdotjs,
+  SiTailwindcss
 } from 'react-icons/si';
 import { FaExternalLinkAlt, FaPlay, FaEye, FaCode } from 'react-icons/fa';
 import './Projects.css';
@@ -61,7 +63,9 @@ const Projects = () => {
     Python: SiPython,
     'Vue.js': SiVuedotjs,
     'Chart.js': SiJavascript,
-    'API Integration': SiJavascript
+    'API Integration': SiJavascript,
+    'Next.js': SiNextdotjs,
+    TailwindCSS: SiTailwindcss,
   };
 
   const techColors = {
@@ -78,7 +82,9 @@ const Projects = () => {
     Python: '#3776AB',
     'Vue.js': '#4FC08D',
     'Chart.js': '#FF6384',
-    'API Integration': '#ffffff'
+    'API Integration': '#ffffff',
+    'Next.js': '#ffffff',
+    TailwindCSS: '#38BDF8',
   };
 
   const projectsData = [
@@ -89,11 +95,10 @@ const Projects = () => {
       technologies: ["React", "MongoDB", "Express", "Node.js", "Framer Motion"],
       category: "Fullstack",
       youtubeId: null,
-      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20114750.png?updatedAt=1756966964616", // Added image
+      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20114750.png?updatedAt=1756966964616",
       demoLink: "https://event-tracker-frontend-l8ve.onrender.com",
       codeLink: "https://github.com/RijansPatoliya/event_tracker"
     },
-    
     {
       id: 2,
       title: "Meal Recipe App",
@@ -101,33 +106,54 @@ const Projects = () => {
       technologies: ["React"],
       category: "Frontend",
       youtubeId: null,
-      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20112303.png?updatedAt=1756965210798", // Kept existing image
+      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20112303.png?updatedAt=1756965210798",
       demoLink: "https://meals-react.onrender.com",
       codeLink: "https://github.com/RijansPatoliya/React-Project/tree/main/Meals"
     },
     {
       id: 3,
+      title: "SmartReq AI",
+      description: "AI-based requirement automation tool using NLP & LLMs to generate user stories and workflows from stakeholder inputs. Built with Next.js, Express, PostgreSQL, and Python.",
+      technologies: ["Next.js", "Node.js", "Express", "PostgreSQL", "Python", "TailwindCSS"],
+      category: "Fullstack",
+      youtubeId: null,
+      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202026-05-11%20093203.png",
+      demoLink: "https://smart-req-ai-wnj9.vercel.app/",
+      codeLink: "https://github.com/RijansPatoliya/SmartReq-AI"
+    },
+    {
+      id: 4,
+      title: "ExMan",
+      description: "Enterprise-grade expense management system with AI-powered receipt scanning, multi-step approval workflows, and automated reporting. Designed to help businesses track, manage, and control expenses at scale with security and full auditability.",
+      technologies: ["Next.js", "React", "Node.js", "Express", "PostgreSQL"],
+      category: "Fullstack",
+      youtubeId: null,
+      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202026-05-11%20094650.png",
+      demoLink: null,
+      codeLink: "https://github.com/RijansPatoliya/expense-management-system"
+    },
+       {
+      id: 5,
       title: "Youtube Clone",
       description: "A simplified YouTube clone built with React, featuring video browsing, search functionality, and responsive design.",
       technologies: ["React"],
       category: "Frontend",
       youtubeId: null,
-      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20113602.png?updatedAt=1756967033518", // Added image
+      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20113602.png?updatedAt=1756967033518",
       demoLink: "https://react-project-7jxc.onrender.com/",
       codeLink: "https://github.com/RijansPatoliya/React-Project/tree/main/Youtube"
     },
     {
-      id: 4,
+      id: 6,
       title: "Calculator App",
       description: "Full-featured calculator application with advanced mathematical functions, history tracking, and a user-friendly interface.",
       technologies: ["HTML5", "CSS3", "JavaScript"],
       category: "Frontend",
       youtubeId: null,
-      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20115922.png?updatedAt=1756967383601", // Added image
+      image: "https://ik.imagekit.io/sbu0mupu9/Screenshot%202025-09-04%20115922.png?updatedAt=1756967383601",
       demoLink: "https://calculator-react-gq6r.onrender.com",
       codeLink: "https://github.com/RijansPatoliya/React-Project/tree/main/Calculator"
     },
-   
   ];
 
   const filteredProjects = activeTab === 'All' 
@@ -268,11 +294,13 @@ const Projects = () => {
                     
                     <div className="project-footer">
                       <div className="project-buttons">
-                        <a href={project.demoLink} className="btn-primary">
-                          <FaEye className="btn-icon" />
-                          <span>Demo</span>
-                        </a>
-                        <a href={project.codeLink} className="btn-secondary">
+                        {project.demoLink && (
+                          <a href={project.demoLink} className="btn-primary" target="_blank" rel="noopener noreferrer">
+                            <FaEye className="btn-icon" />
+                            <span>Demo</span>
+                          </a>
+                        )}
+                        <a href={project.codeLink} className="btn-secondary" target="_blank" rel="noopener noreferrer">
                           <FaCode className="btn-icon" />
                           <span>Code</span>
                         </a>
